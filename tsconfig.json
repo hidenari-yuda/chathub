@@ -1,3 +1,4 @@
+// yarn add --dev @types/chrome
 {
   "compilerOptions": {
     "target": "ESNext",
