@@ -2,7 +2,7 @@
     <img src="./src/assets/icon.png" width="150">
 </p>
 
-<h1 align="center"><span style="color:#f0c674;">Free</span>ChatHub</h1>
+<h1 align="center">ChatHub</h1>
 
 ## 📷 Screenshot
 
@@ -23,6 +23,9 @@
 - 🔗 Share conversation to markdown
 - 🌙 Dark mode
 - 🌐 Web access
+- 💠 No Premium
+- 📦 No registration required
+- 🌈 Open-source
 
 ## 🤖 Supported Bots
 
