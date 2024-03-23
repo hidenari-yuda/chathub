@@ -4,8 +4,6 @@
 
 <h1 align="center"><span style="color:#f0c674;">Free</span>ChatHub</h1>
 
-<div align="center">
-
 ## 📷 Screenshot
 
 ![Screenshot](screenshots/extension.png?raw=true#gh-light-mode-only)
@@ -57,6 +55,8 @@ We are constantly updating the list of supported bots. If you have any suggestio
 ### Original Project
 
 This project is based on [ChatHub](https://github.com/chathub-dev/chathub)
+
+<div align="center">
 
 <a href="https://chrome.google.com/webstore/detail/chathub-all-in-one-chatbo/iaakpnchhognanibcahlpcplchdfmgma?utm_source=github"><img src="https://user-images.githubusercontent.com/64502893/231991498-8df6dd63-727c-41d0-916f-c90c15127de3.png" width="200" alt="Get ChatHub for Chromium"></a>
 
