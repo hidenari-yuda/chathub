@@ -11,11 +11,12 @@ interface ConversationContext {
 export class ClaudeWebBot extends AbstractBot {
   private organizationId?: string
   private conversationContext?: ConversationContext
-  private model: string
+  // private model: string
 
   constructor() {
     super()
-    this.model = 'claude-2.1'
+    // default: claude3 Sonnet
+    // this.model = 'claude-2.1'
   }
 
   async doSendMessage(params: SendMessageParams): Promise<void> {
@@ -33,31 +34,28 @@ export class ClaudeWebBot extends AbstractBot {
       generateChatTitle(this.organizationId, conversationId, params.prompt).catch(console.error)
     }
 
-    const resp = await fetch('https://claude.ai/api/append_message', {
+    const completionUrl = `https://claude.ai/api/organizations/${this.organizationId}/chat_conversations/${this.conversationContext.conversationId}/completion`
+
+    const resp = await fetch(completionUrl, {
       method: 'POST',
       signal: params.signal,
       headers: {
         'Content-Type': 'application/json',
       },
       body: JSON.stringify({
-        organization_uuid: this.organizationId,
-        conversation_uuid: this.conversationContext.conversationId,
-        text: params.prompt,
-        completion: {
-          prompt: params.prompt,
-          model: this.model,
-        },
+        prompt: params.prompt,
         attachments: [],
+        files: [],
       }),
     })
 
     // different models are available for different accounts
-    if (!resp.ok && resp.status === 403 && this.model === 'claude-2.1') {
-      if ((await resp.text()).includes('model_not_allowed')) {
-        this.model = 'claude-2.0'
-        return this.doSendMessage(params)
-      }
-    }
+    // if (!resp.ok && resp.status === 403 && this.model === 'claude-2.1') {
+    //   if ((await resp.text()).includes('model_not_allowed')) {
+    //     this.model = 'claude-2.0'
+    //     return this.doSendMessage(params)
+    //   }
+    // }
 
     let result = ''
 

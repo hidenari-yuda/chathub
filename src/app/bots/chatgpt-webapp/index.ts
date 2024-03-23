@@ -80,6 +80,7 @@ export class ChatGPTWebBot extends AbstractBot {
     console.debug('Using model:', modelName)
 
     const arkoseToken = await getArkoseToken()
+    console.debug('arkoseToken', arkoseToken)
 
     let image: ImageContent | undefined = undefined
     if (params.image) {
@@ -92,6 +93,13 @@ export class ChatGPTWebBot extends AbstractBot {
       headers: {
         'Content-Type': 'application/json',
         Authorization: `Bearer ${this.accessToken}`,
+        'Content-Length': '837',
+        'Openai-Sentinel-Arkose-': arkoseToken,
+        Token:
+          '',
+        'Openai-Sentinel-Chat-': '',
+        'Requirements-Token':
+          '',
       },
       body: JSON.stringify({
         action: 'next',
