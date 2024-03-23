@@ -1,4 +1,4 @@
-import { createHashHistory, ReactRouter, RootRoute, Route, useParams } from '@tanstack/react-router'
+import { createHashHistory, RootRoute, Route, Router, useParams } from '@tanstack/react-router'
 import { BotId } from './bots'
 import Layout from './components/Layout'
 import MultiBotChatPanel from './pages/MultiBotChatPanel'
@@ -51,7 +51,7 @@ export const premiumRoute = new Route({
 const routeTree = rootRoute.addChildren([layoutRoute.addChildren([indexRoute, chatRoute, settingRoute, premiumRoute])])
 
 const hashHistory = createHashHistory()
-const router = new ReactRouter({ routeTree, history: hashHistory })
+const router = new Router({ routeTree, history: hashHistory })
 
 declare module '@tanstack/react-router' {
   interface Register {
@@ -60,3 +60,23 @@ declare module '@tanstack/react-router' {
 }
 
 export { router }
+
+// import { createBrowserRouter } from 'react-router-dom'
+
+// const router = createBrowserRouter([
+//   {
+//     path: '/',
+//     element: <MultiBotChatPanel />,
+//   },
+//   {
+//     path: '/chat/:botId',
+//     element: <SingleBotChatPanel />,
+//   },
+//   {
+//     path: '/setting',
+//     element: <SettingPage />,
+//   },
+//   {
+//     path: '/premium',
+//     element: <PremiumPage />,
+// ])
