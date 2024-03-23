@@ -30,12 +30,12 @@
 ## 🤖 Supported Bots
 
 - [×] ChatGPT (via Webapp/API/Azure/Poe)
-- [×] Bing Chat
+- [○] Bing Chat
 - [×] Google Bard
 - [○] Claude 3 (via Webapp/API/Poe)
 - [×] LLaMA 2
 - [×] ChatGLM
-- [×] Pi by Inflection
+- [○] Pi by Inflection
 - [×] Vicuna
 - [×] WizardLM
 - [×] iFlytek Spark
