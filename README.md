@@ -55,7 +55,7 @@ We are constantly updating the list of supported bots. If you have any suggestio
 - Enable Developer Mode
 - Drag the `dist` folder anywhere on the page to import it (do not delete the folder afterward)
 
-### Original Project
+## ⚫️Original Project
 
 This project is based on [ChatHub](https://github.com/chathub-dev/chathub)
 
